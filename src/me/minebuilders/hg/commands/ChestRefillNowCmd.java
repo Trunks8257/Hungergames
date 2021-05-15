@@ -18,7 +18,7 @@ public class ChestRefillNowCmd extends BaseCmd {
 
     @Override
     public boolean run() {
-        Game game =  HG.plugin.players.get(player.getUniqueId()).getGame();
+        Game game =  HG.manager.getGame(args[1]); //HG.plugin.players.get(player.getUniqueId()).getGame();
         if (game != null) {
             Status st = game.getStatus();
             if (st != Status.RUNNING) {
